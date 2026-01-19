@@ -4,14 +4,18 @@ import com.example.day2task2.model.StudentModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+
 @RestController
 public class Home {
     @GetMapping("/")
-    public StudentModel getStudent(){
-        StudentModel student = new StudentModel();
-        student.setId(73);
-        student.setName("Yash");
-        student.setEmail("maheshwariy077@gmail.com");
-        return student;
+    public ArrayList<StudentModel> getStudent(){
+        ArrayList<StudentModel> students = new ArrayList<>();
+        students.add(new StudentModel(1, "Yash", "maheshwariy077@gmail.com"));
+        students.add(new StudentModel(2, "Yashasvi", "maheshwariy076@gmail.com"));
+        students.add(new StudentModel(3, "YashRaj", "maheshwariy075@gmail.com"));
+        students.add(new StudentModel(4, "Yogendra", "maheshwariy074@gmail.com"));
+        students.add(new StudentModel(5, "Yuvraj", "maheshwariy073@gmail.com"));
+        return students;
     }
 }
